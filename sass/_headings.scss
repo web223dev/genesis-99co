@@ -1,0 +1,27 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 .5em;
+	padding: 0;
+	line-height: 1.375;
+}
+
+h1 {
+	.error404 & {
+		color: $black;
+		font-weight: 600;
+		font-size: 80px;
+	}
+}
+
+h4 {
+	.widget_editors-picks & {
+		margin-bottom: 1.3125em;
+		color: $black;
+		font-weight: 600;
+		font-size: 1em;
+	}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "genesis-bfg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brand-colors": "reimertz/brand-colors",
+    "colors-sass": "mrmrs/colors-sass",
+    "include-media-export": "*",
+    "include-media": "*",
+    "js-cookie": "js-cookie/js-cookie",
+    "normalize-css": "necolas/normalize.css",
+    "vanilla-fitvids": "rosszurowski/vanilla-fitvids"
+  },
+  "devDependencies": {
+    "jivedig-flexington": "jivedig/flexington#^2.3.2",
+    "slick-carousel": "^1.6.0",
+    "waypoints": "^4.0.1"
+  }
+}

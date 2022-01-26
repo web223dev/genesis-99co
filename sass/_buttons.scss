@@ -1,0 +1,52 @@
+.btn {
+	display: inline-block;
+	padding: 0;
+	width: auto;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	line-height: 1;
+	cursor: pointer;
+	transition: all .15s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&:hover,
+	&:focus {
+		background-color: inherit;
+	}
+
+	& a {
+		display: block;
+		margin: 0 auto;
+		width: 12.5em;
+		height: 42px;
+		background: $blue;
+		color: $white;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: .875em;
+		line-height: 42px;
+		&:hover,
+		&:focus {
+			background-color: darken($blue, 10%);
+		}
+	}
+
+	.load-more &,
+	&.btn-solid {
+		padding: 1em 3em;
+		border-radius: 4px;
+		background: $blue;
+		color: $white;
+		font-weight: 600;
+		font-size: 14px;
+		&:hover,
+		&:focus {
+			background-color: darken($blue, 10%);
+		}
+	}
+}

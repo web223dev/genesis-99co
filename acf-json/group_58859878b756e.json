@@ -1,0 +1,39 @@
+{
+    "key": "group_58859878b756e",
+    "title": "Content - Categories",
+    "fields": [
+        {
+            "default_value": "#AAAAAA",
+            "key": "field_58859891fa1dc",
+            "label": "Category Colour",
+            "name": "_99co_category_colour",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1485150847
+}

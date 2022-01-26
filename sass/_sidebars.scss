@@ -1,0 +1,398 @@
+.sidebar {
+	.widget {
+		word-wrap: break-word;
+	}
+
+	.widgettitle {
+	}
+}
+
+.home-side {
+	&.widget-area {
+		@include media( '<=portrait') {
+			position: relative;
+			top: auto;
+		}
+		/**
+		position: sticky;
+		top: calc(118px + 40px);
+		*/
+		.admin-bar-showing & {
+			@include media( '<=portrait') {
+				top: auto;
+			}
+			top: calc(118px + 40px + 32px);
+		}
+	}
+}
+
+.widget {
+	@include media('<=portrait') {
+		margin: 0 auto 1.71875em;
+	}
+	@include media('<portrait') {
+		margin: 0 auto 1.71875em;
+		max-width: 360px;
+	}
+	margin-bottom: 3.4375em;
+	&.widget_nav_menu {
+		margin-bottom: 0;
+	}
+	&.widget_editors-picks {
+		+ .desktop-ads {
+			margin-bottom: 5em;
+		}
+		ol {
+			@include media('>=portrait', '<landscape') {
+				column-count: 2;
+				column-gap: 40px;
+			}
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			counter-reset: li-counter;
+
+			li {
+				@include media('>=portrait', '<landscape') {
+					&:last-of-type {
+						display: none;
+					}
+				}
+				position: relative;
+				margin-bottom: 1.25em;
+				padding: 1.25em 1.25em 1.25em 3.75em;
+				min-height: 3em;
+				background: $white;
+				transition: transform .2s linear, box-shadow .2s linear;
+
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 1.25em;
+					margin-top: -1em;
+					width: 2.5em;
+					height: 2.5em;
+					border: 1px solid;
+					border-color: inherit;
+					border-radius: 50%;
+					color: inherit;
+					content: counter(li-counter);
+					counter-increment: li-counter;
+					text-align: center;
+					font-weight: bold;
+					font-size: .625em;
+					line-height: 2.5em;
+				}
+				&:hover {
+					box-shadow: 0 0 1em 0 rgba(0, 0, 0, .1);
+					transform: translateY(-2px) !important;
+				}
+			}
+		}
+		a {
+			color: $black;
+			text-decoration: none;
+			font-weight: 600;
+		}
+	}
+	&.widget_promo {
+		@include media('<=portrait') {
+			overflow: hidden;
+			margin-bottom: 3.4375em;
+			text-align: left;
+		}
+		position: relative;
+		padding: 2.125em;
+		border-radius: 4px;
+		text-align: center;
+
+		h4 {
+			@include media('<portrait') {
+				margin-bottom: 10px;
+				max-width: 160px;
+			}
+			@include media('>=portrait', '<landscape') {
+				max-width: 320px;
+			}
+			margin-bottom: 20px;
+			color: $white;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: bold;
+			font-size: .625em;
+			line-height: 1.4;
+		}
+
+		h3 {
+			@include media('<portrait') {
+				margin-bottom: 10px;
+				max-width: 160px;
+				font-size: 1em;
+			}
+			@include media('>=portrait', '<landscape') {
+				max-width: 320px;
+			}
+			color: $white;
+			letter-spacing: -.04px;
+			font-weight: 600;
+			font-size: 1.375em;
+			line-height: 1.3636363636;
+		}
+
+		p {
+			@include media('<portrait') {
+				margin-bottom: 10px;
+				max-width: 160px;
+			}
+			@include media('>=portrait', '<landscape') {
+				max-width: 320px;
+			}
+			color: $white;
+			font-weight: 500;
+			font-size: .875em;
+			line-height: 1.4285714286;
+		}
+
+		img {
+			@include media('<portrait') {
+				position: absolute;
+				right: -25%;
+				bottom: -50%;
+			}
+			@include media('>=portrait', '<landscape') {
+				position: absolute;
+				right: 5%;
+				bottom: -50%;
+			}
+		}
+
+		.btn {
+			@include media('<landscape') {
+				margin: 1.125em 0 0;
+				padding: 0;
+				max-width: 160px;
+			}
+			display: block;
+			margin: 2.125em auto 0;
+			padding: 0 4em;
+			max-width: 14.5625em;
+			width: 100%;
+			height: 44px;
+			border-radius: 4px;
+			background: $white;
+			color: $blue;
+			font-weight: 600;
+			font-size: .875em;
+			line-height: 44px;
+
+			&:hover {
+				color: $d-blue;
+			}
+		}
+	}
+	&.gform_widget {
+		@include media('>=portrait', '<landscape') {
+			margin-bottom: 2.5em;
+			padding: 1.0625em;
+		}
+		@include media('<portrait') {
+			margin-bottom: 2.5em;
+		}
+		position: relative;
+		margin-bottom: 2.5em;
+		padding: 2.125em;
+		border: 2px solid $blue;
+		border-radius: 4px;
+		background: $white;
+		text-align: center;
+		&:before {
+			@include media('<portrait') {
+				margin: -68px 0 0 -40px;
+			}
+			@include media('>=portrait', '<landscape') {
+				position: absolute;
+				bottom: 0;
+				left: 1.0625em;
+				margin: 0;
+				width: 141px;
+				height: 117px;
+				background: url('../images/image-mailchimp-widget.svg') no-repeat;
+			}
+			position: relative;
+			display: inline-block;
+			margin: -68px 0 2.125em -40px;
+			width: 162px;
+			height: 136px;
+			background: url('../images/image-mailchimp.svg') no-repeat;
+			background-size: cover;
+			content: '';
+		}
+
+		.widget-wrap {
+			@include media('>=portrait', '<landscape') {
+				float: left;
+				margin-left: 25%;
+				width: 75%;
+			}
+		}
+
+		div.gform_wrapper {
+			margin: 0;
+			text-align: center;
+			.gform_heading {
+				@include media('<portrait') {
+					margin-bottom: 1.125em;
+				}
+				@include media('>=portrait', '<landscape') {
+					margin-bottom: .625em;
+				}
+				margin-bottom: 2.125em;
+				h3.gform_title {
+					@include media('>=portrait', '<landscape') {
+						margin: 0 0 10px;
+						text-align: left;
+						font-size: 1.5em;
+					}
+					margin: 0 0 20px;
+					color: $black;
+					text-align: center;
+					font-weight: 600;
+					font-size: 2em;
+				}
+				span.gform_description {
+					@include media('>=portrait', '<landscape') {
+						margin: 0;
+						max-width: 100%;
+						text-align: left;
+					}
+					margin: 0 auto;
+					max-width: 260px;
+					color: $grey;
+					text-align: center;
+					font-weight: 500;
+					font-size: .875em;
+					line-height: 1.3571428571;
+				}
+			}
+			.gform_body {
+				@include media('<portrait') {
+					margin-bottom: 1.125em;
+				}
+				@include media('>=portrait', '<landscape') {
+					float: left;
+					margin-bottom: .625em;
+					width: calc(80% - 20px);
+				}
+				margin-bottom: 2.125em;
+				li.gfield {
+					margin: 0;
+					padding: 0;
+					div.ginput_container {
+						margin: 0;
+					}
+					input.large {
+						margin: 0;
+						padding: 0 1em !important;
+						height: 44px;
+						text-transform: lowercase;
+						line-height: 44px;
+					}
+				}
+			}
+			.gform_footer {
+				@include media('>=portrait', '<landscape') {
+					float: left;
+					clear: none;
+					margin-left: 20px;
+					width: 20%;
+				}
+				margin: 0;
+				padding: 0;
+				input[type=submit] {
+					display: block;
+					margin: 0;
+					padding: 0 1em;
+					width: 100%;
+					height: 44px;
+					border-radius: 4px;
+					background: $blue;
+					color: $white;
+					font-weight: 600;
+					font-size: .875em;
+					line-height: 44px;
+					&:hover {
+						background: $d-blue;
+					}
+				}
+			}
+		}
+	}
+}
+
+.social-media-nav__sticky {
+	position: sticky;
+	top: calc(117px + 3em);
+	right: 0;
+	z-index: 1;
+	margin: 0;
+	opacity: 1;
+	transition: all .5s ease-in-out;
+
+	li {
+		@include media('<portrait') {
+			display: inline-block;
+			margin: 0 10px 0 0;
+			width: 32px;
+			height: 32px;
+			font-size: 1em !important;
+			line-height: 2 !important;
+		}
+		margin-bottom: 20px !important;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		text-align: center;
+
+		a {
+			display: block;
+			margin: 0 auto;
+			.fa {
+				@include media('<portrait') {
+					font-size: .875em;
+					line-height: 2.2857142857;
+				}
+				color: $white;
+				font-size: 1em;
+				line-height: 50px;
+			}
+			&:hover {
+				opacity: .6;
+			}
+		}
+		&.social-media-nav__twitter {
+			background: $twitter;
+		}
+		&.social-media-nav__facebook {
+			background: $facebook;
+		}
+		&.social-media-nav__linkedin {
+			background: $linkedin;
+		}
+		&.social-media-nav__mail {
+			background: #d8d8d8;
+		}
+		&.social-media-nav__print {
+			border-radius: 0;
+			background: none;
+			color: $grey;
+			text-align: left;
+			font-weight: 500;
+			font-size: 1em;
+			line-height: 1.375;
+			strong {
+				color: $black;
+				font-weight: 600;
+			}
+		}
+	}
+}

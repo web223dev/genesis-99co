@@ -1,0 +1,208 @@
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+video {
+	vertical-align: middle;
+}
+
+figure {
+	margin: 0;
+}
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto $spacer;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: $spacer / 1;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 $spacer $spacer 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 $spacer $spacer;
+}
+
+.wp-caption {
+	width: auto !important;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.wp-caption-text {
+	@include type();
+	margin: 0;
+	text-align: center;
+}
+
+.wp-audio-shortcode,
+.wp-playlist,
+.wp-video {
+	margin: 0 0 $spacer;
+}
+
+.gallery {
+	overflow: hidden;
+}
+
+.gallery-item {
+	float: left;
+	margin: 0 0 $spacer;
+}
+
+$columns: 0;
+@while $columns <= 9 {
+	$columns: $columns + 1;
+	.gallery-columns-#{$columns} {
+		.gallery-item {
+			width: (100% / $columns);
+
+			&:nth-child(#{$columns}n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+.desktop-ads,
+.tablet-ads,
+.mobile-ads {
+	position: relative;
+	display: block;
+	height: 0;
+	background-color: $border;
+	text-align: center;
+	opacity: 0;
+	&:after {
+		position: absolute;
+		right: 0;
+		bottom: 3px;
+		left: 0;
+		margin: 0 auto;
+		color: $border;
+		content: 'ADVERT';
+		letter-spacing: 2.25px;
+		font-size: 9px;
+		line-height: 1.33;
+		.site-header & {
+			position: absolute;
+			top: 0;
+			right: -35px;
+			bottom: 0;
+			left: inherit;
+			margin: auto;
+			width: auto;
+			height: 15px;
+			color: $grey;
+			text-transform: uppercase;
+			font-size: 10px;
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.desktop-ads {
+	@include media('<=landscape') {
+		display: none;
+	}
+	display: block;
+	margin: 2.5em auto;
+	max-width: 728px;
+	text-align: center;
+	&.ads-side {
+		max-width: 300px;
+	}
+	&.ads-top,
+	&.ads-bottom {
+		@include media('<portrait') {
+			display: block;
+		}
+		display: none;
+	}
+}
+
+.tablet-ads {
+	@include media('<=landscape') {
+		display: block;
+	}
+	display: none;
+	margin: 2.5em auto;
+	max-width: 720px;
+	text-align: center;
+	&.ads-side {
+		margin: 0 auto 2.5em;
+		max-width: 300px;
+	}
+	&.ads-bottom {
+		margin: 2.5em auto 0;
+		.archive & {
+			margin: 0 auto 2.5em;
+		}
+	}
+}
+
+.mobile-ads {
+	@include media('<portrait') {
+		display: block;
+	}
+	display: none;
+	margin: 2.5em auto;
+	max-width: 320px;
+	text-align: center;
+	&.ads-side {
+		margin: 0 auto;
+		max-width: 300px;
+	}
+	&.ads-middle {
+		margin: 0 auto 1.5em;
+		max-width: 300px;
+	}
+	&.ads-bottom {
+		margin: 0 auto 2.5em;
+		max-width: 300px;
+	}
+}

@@ -1,0 +1,164 @@
+.site-header {
+	@include media( '<=portrait') {
+		height: auto;
+	}
+	position: fixed;
+	z-index: 500;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid $border;
+	background: $white;
+
+	.post-type-archive-agents & {
+		background: $blue;
+	}
+
+	> .wrap {
+		@include wrap();
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+		max-width: 100%;
+	}
+}
+
+.title-area {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: auto;
+	padding: 0 1em;
+	max-width: 320px;
+}
+
+.site-title {
+	margin: .8125em 0;
+	a {
+		display: block;
+		width: 92px;
+		height: 34px;
+		background: url('../images/logo.svg') no-repeat center;
+		background-size: contain;
+		text-indent: -9999px;
+
+		.post-type-archive-agents & {
+			background: url('../images/logo-w.svg') no-repeat center;
+		}
+
+		&:hover,
+		&:focus {
+		}
+	}
+}
+
+.site-description {
+	display: none;
+	height: 0;
+	text-indent: -999999px;
+}
+
+.header-content,
+.header-widget-area {
+	display: flex;
+	margin-left: auto;
+	width: calc(100% - (92px + 2em));
+
+	.nav-header-left {
+		flex: 1 1 0%;
+		align-items: flex-start;
+	}
+
+	.nav-header-right {
+		align-items: flex-end;
+	}
+
+	.widget {
+	}
+}
+
+.nav-header-left {
+	@include media( '<=portrait') {
+		flex: auto;
+	}
+	flex: 1 1 0%;
+	align-items: flex-start;
+}
+
+.nav-header-right {
+	align-items: flex-end;
+}
+
+@include media( '<=portrait') {
+	.header-content {
+		order: 1;
+		margin-right: calc(100% - 92px);
+		margin-left: 1em;
+		width: auto;
+	}
+
+	.title-area + .menu-toggle {
+		position: relative;
+		top: 0;
+		left: 0;
+		order: 20;
+		margin-right: 0;
+		margin-left: 1em;
+		width: auto;
+		border: none !important;
+
+		&.activated {
+			color: $blue;
+			&:before {
+				color: $blue;
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	.menu-toggle + .nav-header-left {
+		order: 5;
+
+		li {
+			border-bottom: 1px solid $border;
+			&:nth-child(odd) {
+				background: #f5f5f5;
+			}
+		}
+	}
+
+	.title-area {
+		@include media( '<=portrait') {
+			margin: 0 auto 0 0;
+			padding: .8125em 1em;
+		}
+		order: 25;
+		margin: 0 auto;
+		.site-title {
+			@include media( '<=portrait') {
+				margin: 0;
+			}
+			margin-left: -70px;
+		}
+	}
+
+	h2.screen-reader-text + .menu-toggle {
+		order: 30;
+		&.activated {
+			&:before {
+				transform: rotate(180deg);
+			}
+		}
+		&:before {
+			content: '\f347';
+			transition: transform .25s ease-in-out;
+		}
+	}
+	.menu-toggle + .nav-primary {
+		order: 44;
+	}
+}

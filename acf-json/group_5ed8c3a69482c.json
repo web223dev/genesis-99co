@@ -1,0 +1,139 @@
+{
+    "key": "group_5ed8c3a69482c",
+    "title": "Blog <> Portal Widget (Test)",
+    "fields": [
+        {
+            "key": "field_5ed8c3c19aa92",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "Please add text for desired categories mentioned in article",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "e.g. Condos for sale under $800K",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5ed8c4099aa93",
+            "label": "See all listings button",
+            "name": "see_all_listings_button",
+            "type": "repeater",
+            "instructions": "Input customizable text & urls for see all listings. Input mutiple urls if Both Rent & Sale options selected",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5ed8c93943b9a",
+                    "label": "See all listings button text",
+                    "name": "see_all_listings_button_text",
+                    "type": "text",
+                    "instructions": "Input customizable text for \"see all listings\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "See all listings",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "show_column": 0,
+                    "show_column_sortable": 0,
+                    "show_column_weight": 1000,
+                    "allow_quickedit": 0,
+                    "allow_bulkedit": 0
+                },
+                {
+                    "key": "field_5ed8c9a743b9b",
+                    "label": "See all listings button url",
+                    "name": "see_all_listings_button_url",
+                    "type": "url",
+                    "instructions": "Input url for desired listings.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5ed8c45d8af03",
+            "label": "Sale\/Rent Selector",
+            "name": "salerent_selector",
+            "type": "select",
+            "instructions": "Please choose to display Sale\/Rent\/Both Sale & Rent listings",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Rent": "Rent",
+                "Sale": "Sale",
+                "Both Rent & Sale": "Both Rent & Sale"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 1,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1591265866
+}

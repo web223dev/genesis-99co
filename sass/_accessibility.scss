@@ -1,0 +1,29 @@
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// https://raw.githubusercontent.com/copyblogger/genesis-sample/5afef88688b0f187733cea089fbb5bfc5ce2c351/style.css
+// https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe#.17fafly68
+@mixin visuallyhidden {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	width: 1px;
+	height: 1px;
+	border: 0;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+	@include visuallyhidden;
+}
+
+// https://raw.githubusercontent.com/copyblogger/genesis-sample/5afef88688b0f187733cea089fbb5bfc5ce2c351/style.css
+.genesis-skip-link {
+	margin: 0;
+
+	li {
+		width: 0;
+		height: 0;
+		list-style: none;
+	}
+}
